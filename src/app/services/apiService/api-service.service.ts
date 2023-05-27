@@ -7,7 +7,7 @@ import axios from 'axios';
 })
 
 export class ApiServiceService {
-  URL = 'http://localhost:5000' 
+  URL = 'https://food-mart-backend.vercel.app' 
   api = axios.create();
 
   constructor() { 
