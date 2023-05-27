@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin FlexResponsive($device, $d, $fd, $jc, $ai, $wrap: 'flex-wrap') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+  .sign_up_btn{
+    width: 70%;
+    background-color: #0056d2;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    @include TextResponsive('large', 16px, 500, white);
+    @include TextResponsive('small', 14px, 500, white);
+    @include TextResponsive('medium', 16px, 500, white);
+    @include PaddingResponsive('large', 5px, 0px , 5px, 0px);
+    @include PaddingResponsive('medium', 15px, 0px , 15px, 0px);
+    @include PaddingResponsive('small', 10px, 0px , 10px, 0px);
+  }
+
+.inputs{
+    display: block
+}
+.signup_main_container{
+    padding: 50px;
+    @include FlexResponsive('large', flex, row, center, center, nowrap);
+    @include FlexResponsive('medium', flex, row, center, center);
+    @include FlexResponsive('small', flex, column, center, center);
+}
+.input_div{
+    margin-top: 15px;
+}
+
+.auth_img{
+    width: 70%;
+    height: 70%;
+}
+.img_div{
+    width: 50%;
+}
+
+.inputs{
+    font-size: 14px;
+    height: 50px;
+    padding-left: 10px;
+    width: 280px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: solid 2px #8cc63e;
+    display: block
+}
+
+.labels{
+    color: #497d04;
+    font-weight: bold;
+}

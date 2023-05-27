@@ -1,0 +1,31 @@
+<section>
+    <h1 *ngIf="foodId" class="text-center titles" >Update Your Food Product</h1>
+ 
+        <h1 *ngIf="!foodId" class="text-center titles" >Add Your Food Product</h1>
+   <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="p-4  ">
+
+            <div class="input_div">
+                <label class="labels">Food Name</label>
+                <input value={{foodObj.foodName}} placeholder="Eneter Food Name" type="text" name="foodName"  (change)="foodDataChangeHandler( $event)" class="inputs"/>
+                <small *ngIf="errorObj.foodNameErr" class="d-block my-2 text-danger">{{errorObj.foodNameErr}}</small>
+            </div>
+            <div class="input_div">
+                <label class="labels">Food Price</label>
+                <input value={{foodObj.foodPrice}}  placeholder="Eneter Price" type="number" name="foodPrice"  (change)="foodDataChangeHandler( $event)" class="inputs"/>
+                <small *ngIf="errorObj.priceErr" class="d-block my-2 text-danger">{{errorObj.priceErr}}</small>
+            </div>
+            <div class="input_div">
+                <label class="labels">Description</label>
+                <textarea   value={{foodObj.foodDescription}} class="d-block inputs" placeholder="Write Description" name="foodDescription"  (change)="foodDataChangeHandler( $event)"  rows="4" cols="50" style="width: 300px; height: 150px;"></textarea>
+                <small *ngIf="errorObj.desceErr" class="d-block my-2 text-danger">{{errorObj.desceErr}}</small>
+            </div>
+            <div class="input_div">
+                <label class="labels">Upload Food Image</label>
+                <input type="file" name="foodImg"  (change)="foodDataChangeHandler( $event)" class="inputs"/>
+            </div>
+            <button *ngIf="!foodId" (click)="foodAddHandler()" class="details_view_btn">Add Food</button>
+            <button *ngIf="foodId" (click)="updateFoodHandler()" class="details_view_btn">Update Food</button>
+        </div>
+   </div>
+</section>

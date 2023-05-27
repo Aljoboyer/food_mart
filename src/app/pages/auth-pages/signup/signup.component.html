@@ -1,0 +1,28 @@
+<section class="signup_main_container">
+    <div>
+        <div class="input_div">
+            <label class="labels">Name</label>
+            <input placeholder="Eneter Your Name" type="text" name="name"  (change)="onUserChangeHandler( $event)" class="inputs"/>
+            <small *ngIf="errorObj.nameErr" class="d-block my-2 text-danger">{{errorObj.nameErr}}</small>
+        </div>
+        <div class="input_div">
+            <label  class="labels">Email</label>
+            <input  placeholder="Eneter Your Email" type="email" name="email"  (change)="onUserChangeHandler( $event)" class="inputs"/>
+            <small *ngIf="errorObj.emailErr" class="d-block my-2 text-danger">{{errorObj.emailErr}}</small>
+        </div>
+        <div class="input_div">
+            <label  class="labels">Password</label>
+            <input  placeholder="Eneter Your Password" type="password" name="password"  (change)="onUserChangeHandler( $event)" class="inputs"/>
+            <small *ngIf="errorObj.passwordErr" class="d-block my-2 text-danger">{{errorObj.passwordErr}}</small>
+        </div>
+        <div class="input_div">
+            <label  class="labels">Re-Enter Password</label>
+            <input placeholder="Eneter Your Re-Enter Password" type="password" name="password2"  (change)="onUserChangeHandler( $event)" class="inputs"/>
+            <small *ngIf="errorObj.password2Err" class="d-block my-2 text-danger">{{errorObj.password2Err}}</small>
+        </div>
+        <button (click)="signUpHandler()" class="sign_up_btn">Sign-Up</button>
+    </div>
+    <div class="img_div">
+        <img class="auth_img" src="../../../../assets/signup.jpg" />
+    </div>
+</section>

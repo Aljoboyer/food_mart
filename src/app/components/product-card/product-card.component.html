@@ -1,0 +1,8 @@
+<div class="product_card">
+    <img class="food_img" src="data:image/jpeg;base64,{{food?.foodImg}}" />
+    <h3>{{food.foodName}}</h3>
+    <h5>${{food.foodPrice}}</h5>
+    <p>{{food.foodDescription.slice(0, 20)}}</p>
+    <button class="details_view_btn"  *ngIf="user.message == 'User Authorized'" (click)="detailsViewHandler(food?._id)">View Details</button>
+    <button  class="details_view_btn" *ngIf="user.message !== 'User Authorized'" (click)="unAuthorised()">View Details</button>
+</div>

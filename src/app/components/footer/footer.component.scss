@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oswald:wght@300&display=swap');
+
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin FlexResponsive($device, $d, $fd, $jc, $ai, $wrap: 'flex-wrap') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+@mixin GridResponsive($device: 'large', $display, $gtc) {
+    @if ($device == 'small') {
+      @media only screen and (min-width:200px) and (max-width:567px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
+  }
+  @if ($device == 'medium') {
+      @media only screen and (min-width:568px) and (max-width: 991px) {
+          display: $display;
+          grid-template-columns: repeat(1fr $gtc);
+          column-gap: 20px;
+      }
+  }
+  @if ($device == 'large') {
+      @media only screen and (min-width: 992px) and (max-width: 3000px) {
+          display: $display;
+          grid-template-columns: repeat($gtc , 1fr);
+          column-gap: 20px;
+      }
+  }
+  }
+
+.footer_section{
+    background-color: #8cc63e;
+    padding: 30px 0px 30px 0px;
+    
+    .footer_div{
+        @include GridResponsive('large', grid, 4);
+        @include GridResponsive('medium', grid, 2);
+        @include GridResponsive('small', grid, 1);
+    }
+    .heading_text{
+        @include TextResponsive('large',20px, 400, #4884d9);
+        @include TextResponsive('small', 17px, 400, #7391ba);
+        @include TextResponsive('medium', 15px, 400, #7391ba);
+    }
+    .footer_list{
+        list-style: none;
+        @include TextResponsive('large', 11px, 200, white);
+        @include TextResponsive('small', 10px, 200, white);
+        @include TextResponsive('medium', 8px, 200, white);
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline
+        }
+    }
+    .below_footer_row{
+        @include FlexResponsive('large', flex, row, space-between, center, nowrap);
+        @include FlexResponsive('medium', flex, row, space-between, center);
+        @include FlexResponsive('small', flex, column, flex-start, center);
+        padding: 0px 50px 0px 30px;
+    }
+    .lowar_footer_text{
+        @include TextResponsive('large', 11px, 200, white);
+        @include TextResponsive('small', 10px, 200, white);
+        @include TextResponsive('medium', 8px, 200, white);
+    }
+    .img_icon{
+        cursor: pointer;
+    }
+}
+
+.hr_line{
+    height: 10px;
+    color: white;
+}

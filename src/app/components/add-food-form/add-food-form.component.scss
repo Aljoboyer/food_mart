@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+@mixin TextResponsive($device: 'large', $fs, $fw, $tc: 'black') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            font-size:  $fs;
+            font-family: 'Oswald', sans-serif;
+            font-weight: $fw;
+            color: $tc;
+        }
+    }
+}
+
+@mixin FlexResponsive($device, $d, $fd, $jc, $ai, $wrap: 'flex-wrap') {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            display: $d;
+            flex-direction: $fd;
+            justify-content: $jc;
+            align-items: $ai;
+            flex-wrap: $wrap;
+        }
+    }
+}
+
+@mixin PaddingResponsive($device, $pt, $pr, $pb, $pl) {
+    @if ($device == 'small') {
+        @media only screen and (min-width:200px) and (max-width:567px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'medium') {
+        @media only screen and (min-width:568px) and (max-width: 991px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+    @if ($device == 'large') {
+        @media only screen and (min-width: 992px) and (max-width: 3000px) {
+            padding: $pt $pr $pb $pl;
+        }
+    }
+}
+
+.inputs{
+    display: block
+}
+.input_div{
+    margin-top: 15px;
+}
+
+.inputs{
+    font-size: 14px;
+    height: 50px;
+    padding-left: 10px;
+    width: 280px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: solid 2px #8cc63e;
+    display: block
+}
+
+.labels{
+    color: #497d04;
+    font-weight: bold;
+}
+
+.details_view_btn{
+    background-color: #8cc63e;
+    color: white;
+    border-color: #8cc63e;
+    border-radius: 5px;
+    height: 40px;
+    width: 180px;
+    margin-top: 10px;
+}
+
+.titles{
+    @include TextResponsive('large', 30px, bold, #8cc63e);
+    @include TextResponsive('small', 20px, bold, #8cc63e);
+    @include TextResponsive('medium', 25px, bold, #8cc63e);
+    margin-top: 10px;
+}

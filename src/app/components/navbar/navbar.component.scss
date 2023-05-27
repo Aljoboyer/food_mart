@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.login_btn{
+    background-color: white;
+    border: 1px solid #27a9e1;
+    outline: none;
+    border-radius: 50px;
+    height: 40px;
+    width: 80px;
+    color: #27a9e1;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
+}
+.sign_up_btn{
+    background-color: #27a9e1;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
+}
+
+.navbar-brand{
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke: 1px #4bb4e9;
+    text-shadow: 0px 2px 4px blue;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.logOut{
+
+    background-color:     #8cc63e;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 50px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 40px;
+}

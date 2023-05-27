@@ -1,0 +1,14 @@
+<section class="container-fluid d-flex flex-column justify-content-center align-items-center my-4">
+   <div>
+    <div>
+        <img class="details_img" src="data:image/jpeg;base64,{{foodDetails?.foodImg}}" />
+        <h3>{{foodDetails.foodName}}</h3>
+        <h5>${{foodDetails.foodPrice}}</h5>
+        <p>${{foodDetails.foodDescription}}</p>
+    </div>
+    <div>
+        <button class="delete_btn" (click)="deleteHandler(foodDetails?._id)">Delete</button>
+        <button class="ms-2 details_view_btn" (click)="updateNavigateHandler(foodDetails?._id)">View Details</button>
+    </div>
+   </div>
+</section>
